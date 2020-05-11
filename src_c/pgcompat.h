@@ -195,6 +195,11 @@
 
 
 #if defined(SDL_VERSION_ATLEAST)
+
+#if !(SDL_VERSION_ATLEAST(2, 0, 0))
+/* SDL 1.x does not have SDL_Window */
+typedef void SDL_Window;
+#endif
 #if !(SDL_VERSION_ATLEAST(2, 0, 5))
 /* These functions require SDL 2.0.5 or greater.
 
